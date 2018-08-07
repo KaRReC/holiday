@@ -1,0 +1,402 @@
+* {
+    box-sizing: border-box;
+    font-family: Comic Sans MS;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-size: 17px;
+}
+
+#main {
+    height: 50px;
+    background-color: white;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+#ham {
+    font-size: 30px;
+    cursor: pointer;
+    float: right;
+    background-color: transparent;
+    color: #111;
+}
+
+#ham:hover {
+    color: #0066cc;
+}
+
+#txt {
+    color: #818181;
+    padding: 8px 8px 8px 32px;
+    font-size: 25px;
+}
+
+#calendar {
+    color: #111;
+    padding: 8px 8px 8px 32px;
+    font-size: 20px;
+}
+
+.foto {
+    text-align: center;
+}
+
+.dot {
+    height: 25px;
+    width: 25px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    cursor: pointer;
+}
+
+#slider {
+    width: 80%;
+    height: 550px;
+    padding: 5% 5% 1% 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 7%;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    margin-top: 9%;
+}
+
+.holiday {
+    width: 70%;
+    height: 550px;
+    padding: 5% 5% 1% 5%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    background-color: #0066cc;
+    color: #e6f2ff;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+#Input {
+    float: right;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+}
+
+.weatherRow {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    clear: both;
+}
+
+.weatherBox1 {
+    flex: 30%;
+    height: 60%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding: 5%;
+    font-size: 1.2rem;
+    text-align: center;
+    border: 1px solid black;
+    background-image: url("../Img/sky.jpeg");
+    box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.4);
+    background-position: center;
+    background-size: cover;
+}
+
+.weatherBox {
+    flex: 15%;
+    margin: 2%;
+    padding: 2%;
+    font-size: 1.2rem;
+    text-align: center;
+    border: 1px solid black;
+    background-image: url("../Img/sky.jpeg");
+    box-shadow: 0 20px 30px 0 rgba(0, 0, 0, 0.4);
+    background-position: center;
+    background-size: cover;
+}
+
+.weatherBox1 span {
+    font-weight: lighter;
+}
+
+.weatherBox span {
+    font-weight: lighter;
+}
+
+.weatherBox1 img {
+    width: 65%;
+    height: 65%;
+    margin: 0;
+}
+
+.weatherBox img {
+    width: 40%;
+    height: 40%;
+    margin: 0;
+}
+
+.weatherBox1 h1,
+h2,
+h3,
+span {
+    padding: 0;
+    margin: 0;
+}
+
+.weatherBox h1,
+h2,
+h3,
+span {
+    padding: 0;
+    margin: 0;
+}
+
+.cos {
+    flex: 60%;
+    margin: 2%;
+    padding: 1%;
+    height: auto;
+}
+
+.OrderRow {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    clear: both;
+}
+
+.Radio {
+    flex: 40%;
+    margin: 2%;
+    padding: 2%;
+}
+
+.Radio input[type=number] {
+    width: 150px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 1%;
+}
+
+.Radio input[type=number]:focus {
+    background-color: lightblue;
+    border-radius: 5px;
+}
+
+.slidecontainer {
+    width: 100%;
+}
+
+.taxi {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 15px;
+    border-radius: 10px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.taxi:hover {
+    opacity: 1;
+}
+
+.taxi::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #0066cc;
+    cursor: pointer;
+}
+
+.taxi::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+#legend {
+    float: right;
+}
+
+#legend2 {
+    float: left;
+}
+
+#notValid {
+    color: red;
+}
+
+#dest {
+    color: red;
+}
+
+.buttons {
+    background: #0066cc;
+    color: #fff;
+    border: none;
+    position: relative;
+    height: 40px;
+    width: 90px;
+    font-size: 1em;
+    padding: 1%;
+    margin: 2%;
+    cursor: pointer;
+    transition: 800ms ease all;
+    outline: none;
+}
+
+.buttons:hover {
+    background: #fff;
+    color: #0066cc;
+}
+
+.buttons::before,
+.buttons::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: #0066cc;
+    transition: 400ms ease all;
+}
+
+.buttons::after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+}
+
+.buttons:hover::before,
+.buttons:hover::after {
+    width: 100%;
+    transition: 800ms ease all;
+}
+
+@media (max-width: 800px) {
+    img {
+        margin-bottom: 20%;
+        height: auto;
+    }
+    #slider {
+        width: 90%;
+        height: 350px;
+        margin-bottom: 30%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .holiday {
+        width: 90%;
+        height: 550px;
+        padding: 5% 5% 1% 5%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    #legend {
+        float: left;
+    }
+}
+
+@media (max-width: 600px) {
+    .weatherBox1 {
+        margin: 4%;
+    }
+    .weatherBox1 img {
+        width: 35%;
+        height: 35%;
+        margin: 0;
+    }
+    .weatherBox {
+        flex: 22%;
+        margin: 1%;
+        padding: 1%;
+    }
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+    .sidenav a {
+        font-size: 18px;
+    }
+}
