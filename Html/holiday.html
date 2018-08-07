@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../Css/holiday.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../JS/holiday.js"></script>
+    <title>JS</title>
+</head>
+
+<body onload="start();">
+    <div id="main">
+        <span id="ham" onclick="openNav()">Menu  &#9776; &nbsp</span>
+        <div id="calendar"></div>
+    </div>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#slider">Photos</a>
+        <a href="#Input">Trips</a>
+        <a href="#city">Weather</a>
+        <a href="#descNewYork">Orders</a>
+        <div id="txt"></div>
+    </div>
+    <div class="foto">
+        <div id="slider">
+        </div>
+        <span class="dot" onclick="showPhoto(1)"></span>
+        <span class="dot" onclick="showPhoto(2)"></span>
+        <span class="dot" onclick="showPhoto(3)"></span>
+        <span class="dot" onclick="showPhoto(4)"></span>
+        <span class="dot" onclick="showPhoto(5)"></span>
+    </div>
+    <div class="holiday">
+        <h2>Choose your holiday destination:</h2>
+        <input id="Input" type="text" placeholder="Search.." />
+        <table>
+            <thead>
+                <tr>
+                    <th>City</th>
+                    <th>Country</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody id="HolydayTable">
+                <tr>
+                    <td>Rome</td>
+                    <td>Italy</td>
+                    <td>400 &#x20AC;</td>
+                </tr>
+                <tr>
+                    <td>Warsaw</td>
+                    <td>Poland</td>
+                    <td>200 &#x20AC;</td>
+                </tr>
+                <tr>
+                    <td>Berlin</td>
+                    <td>Germany</td>
+                    <td>300 &#x20AC;</td>
+                </tr>
+                <tr>
+                    <td>New York</td>
+                    <td>USA</td>
+                    <td>800 &#x20AC;</td>
+                </tr>
+            </tbody>
+        </table>
+        <h1>Weather for yours and trips locations: </h1>
+    </div>
+    <div class="weatherRow">
+        <div class="weatherBox1">
+            <h2 id="city">Dresden</h2>
+            <div class="middleBox">
+                <img src="" alt="icon" id="icon">
+                <div class="degrees">
+                    <h1 id="temp">28<span>&#176;</span></h1>
+                </div>
+                <h3 id="desc">sunny</h3>
+            </div>
+        </div>
+        <div class="cos">
+            <div class="weatherRow">
+                <div class="weatherBox">
+                    <h2 id="Rome">Rome</h2>
+                    <div class="middleBox">
+                        <img src="" alt="icon" id="iconRome">
+                        <div class="degrees">
+                            <h1 id="tempRome">28<span>&#176;</span></h1>
+                        </div>
+                        <h3 id="descRome">sunny</h3>
+                    </div>
+                </div>
+                <div class="weatherBox">
+                    <h2 id="Warsaw">Warsaw</h2>
+                    <div class="middleBox">
+                        <img src="" alt="icon" id="iconWarsaw">
+                        <div class="degrees">
+                            <h1 id="tempWarsaw">28<span>&#176;</span></h1>
+                        </div>
+                        <h3 id="descWarsaw">sunny</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="weatherRow">
+                <div class="weatherBox">
+                    <h2 id="Berlin">Berlin</h2>
+                    <div class="middleBox">
+                        <img src="" alt="icon" id="iconBerlin">
+                        <div class="degrees">
+                            <h1 id="tempBerlin">28<span>&#176;</span></h1>
+                        </div>
+                        <h3 id="descBerlin">sunny</h3>
+                    </div>
+                </div>
+                <div class="weatherBox">
+                    <h2 id="NewYork">New York</h2>
+                    <div class="middleBox">
+                        <img src="" alt="icon" id="iconNewYork">
+                        <div class="degrees">
+                            <h1 id="tempNewYork">28<span>&#176;</span></h1>
+                        </div>
+                        <h3 id="descNewYork">sunny</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form>
+        <div class="OrderRow">
+            <div class="Radio">
+                <h4>Destination:</h4>
+                <input type="radio" name="city" value="Enable" id="RomeR" required>Rome 400 &euro;
+                <br>
+                <input type="radio" name="city" value="Enable" id="WarsawR" required>Warsaw 200 &euro;
+                <br>
+                <input type="radio" name="city" value="Enable" id="BerlinR" required>Berlin 300 &euro;
+                <br>
+                <input type="radio" name="city" value="Disable" id="NewYorkR" required>New York 800 &euro; ( Only by plain )
+                <br>
+            </div>
+            <div class="Radio">
+                <h4>Includes:</h4>
+
+                <input type="number" id="persons" required placeholder="How many persons ?"><span id="valid"> 1 - 10</span>
+                <br>
+                <input type="radio" name="choice" id="all" required>All inclusive + 100 &euro;
+                <br>
+                <input type="radio" name="choice" id="only" required>Only breakfast + 30 &euro;
+                <br>
+                <input type="radio" name="choice" id="non" required checked="checked">Non inclusive ( default )
+                <br>
+            </div>
+        </div>
+        <div class="OrderRow">
+            <div class="Radio">
+                <h4>Transport:</h4>
+                <input type="radio" name="transport" id="plain" required>Plain + 150 &euro;
+                <br>
+                <input type="radio" name="transport" id="bus" class="dis" required><span class="dis">Bus + 50 &euro;</span>
+                <br>
+                <input type="radio" name="transport" id="own" class="dis" required checked="checked"><span class="dis">Own transport ( default )</span>
+                <br>
+                <button type="button" class="buttons" onclick="resetAll()">Reset</button>
+                <input type="submit" class="buttons" name="Order" value="Order">
+                <button type="button" class="buttons" onclick="CalculateV()">Calculate</button>
+            <br>
+            </form>
+            <span id="dest"></span><span id="pers"></span>
+            <br>
+            <span id="trip"></span>
+            <br>
+            <span id="ch"></span>
+            <br>
+            <span id="trans"></span>
+            </div>
+            <div class="Radio">
+                <div class="slidecontainer">
+                    <h4>You need taxi:<h4>
+                    <span id="legend2">Kilometer price: 2.20 &euro;&nbsp;</span>
+
+                    <span id="legend">Base fee: 4 &euro;</span>
+                    <br><br>
+                    <input type="range" step="1" min="1" max="100" class="taxi" id="Range" value="50" onchange="taxi(this.value);" oninput="taxi(this.value);">
+                    <p>Kilometers: <input type="number" id="kilo" value="50"></p>
+                    <p><span id="cost">Costs: 114</span></p>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
