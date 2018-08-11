@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
@@ -10,7 +9,6 @@
     <script src="../JS/holiday.js"></script>
     <title>JS</title>
 </head>
-
 <body onload="start();">
     <div id="main">
         <span id="ham" onclick="openNav()">Menu  &#9776; &nbsp</span>
@@ -127,49 +125,49 @@
             </div>
         </div>
     </div>
-    <form>
+    <form action="http://127.0.0.1/websites/Holiday/Php/order.php" method="POST">
         <div class="OrderRow">
             <div class="Radio">
                 <h4>Destination:</h4>
-                <input type="radio" name="city" value="Enable" id="RomeR" required>Rome 400 &euro;
+                <input type="radio" name="city" value="Rome" id="RomeR" required>Rome 400 &euro;
                 <br>
-                <input type="radio" name="city" value="Enable" id="WarsawR" required>Warsaw 200 &euro;
+                <input type="radio" name="city" value="Warsaw" id="WarsawR" required>Warsaw 200 &euro;
                 <br>
-                <input type="radio" name="city" value="Enable" id="BerlinR" required>Berlin 300 &euro;
+                <input type="radio" name="city" value="Berlin" id="BerlinR" required>Berlin 300 &euro;
                 <br>
-                <input type="radio" name="city" value="Disable" id="NewYorkR" required>New York 800 &euro; ( Only by plain )
+                <input type="radio" name="city" value="NewYork" id="NewYorkR" required>New York 800 &euro; ( Only by plain )
                 <br>
             </div>
             <div class="Radio">
                 <h4>Includes:</h4>
-
-                <input type="number" id="persons" required placeholder="How many persons ?"><span id="valid"> 1 - 10</span>
+                <input type="number" id="persons" name="persons" required placeholder="How many persons ?"><span id="valid"> 1 - 10</span>
                 <br>
-                <input type="radio" name="choice" id="all" required>All inclusive + 100 &euro;
+                <input type="radio" name="choice" id="all" value="all" required>All inclusive + 100 &euro;
                 <br>
-                <input type="radio" name="choice" id="only" required>Only breakfast + 30 &euro;
+                <input type="radio" name="choice" id="only" value="only breakfast" required>Only breakfast + 30 &euro;
                 <br>
-                <input type="radio" name="choice" id="non" required checked="checked">Non inclusive ( default )
+                <input type="radio" name="choice" id="non" value="non" required checked="checked">Non inclusive ( default )
                 <br>
             </div>
         </div>
         <div class="OrderRow">
             <div class="Radio">
                 <h4>Transport:</h4>
-                <input type="radio" name="transport" id="plain" required>Plain + 150 &euro;
+                <input type="radio" name="transport" id="plain" value="plain" required>Plain + 150 &euro;
                 <br>
-                <input type="radio" name="transport" id="bus" class="dis" required><span class="dis">Bus + 50 &euro;</span>
+                <input type="radio" name="transport" id="bus" value="bus" class="dis" required><span class="dis">Bus + 50 &euro;</span>
                 <br>
-                <input type="radio" name="transport" id="own" class="dis" required checked="checked"><span class="dis">Own transport ( default )</span>
+                <input type="radio" name="transport" id="own" value="own" class="dis" required checked="checked"><span class="dis">Own transport ( default )</span>
                 <br>
+                <h3>First calculate then order !</h3>
                 <button type="button" class="buttons" onclick="resetAll()">Reset</button>
                 <input type="submit" class="buttons" name="Order" value="Order">
                 <button type="button" class="buttons" onclick="CalculateV()">Calculate</button>
             <br>
-            </form>
             <span id="dest"></span><span id="pers"></span>
             <br>
-            <span id="trip"></span>
+            <span>Total costs: </span><input type="text" name="price" id="price" required> &euro;
+            </form>
             <br>
             <span id="ch"></span>
             <br>
@@ -179,7 +177,6 @@
                 <div class="slidecontainer">
                     <h4>You need taxi:<h4>
                     <span id="legend2">Kilometer price: 2.20 &euro;&nbsp;</span>
-
                     <span id="legend">Base fee: 4 &euro;</span>
                     <br><br>
                     <input type="range" step="1" min="1" max="100" class="taxi" id="Range" value="50" onchange="taxi(this.value);" oninput="taxi(this.value);">
