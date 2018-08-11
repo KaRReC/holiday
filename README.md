@@ -1,7 +1,9 @@
 # holiday
 
 One page website, where I concentrated in JavaScript and jQuery a little bit less in Html and Css. 
+
 Website contains:
+
 1. JS function that shows current time and date.
 2. JS for side navigation menu.
 3. Photos slider made in JS & jQuery.
@@ -12,3 +14,5 @@ Website contains:
 7. Function that calculates holiday trip cost after selecting customized options. Plus validation for selected options.
 8. jQuery script that disable some options, when others are chosen.
 9. Reset function which remove selected options.
+
+I added order.php file, it contains script that inserts data into database.
