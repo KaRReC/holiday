@@ -273,7 +273,7 @@ function Calculate() {
 
             price += 0;
         }
-        document.getElementById("trip").innerHTML = "Total costs: " + (price * persons) + " &euro;";
+        document.getElementById("price").value = (price * persons);
     }
     if (berlin == true) {
 
@@ -304,7 +304,7 @@ function Calculate() {
 
             price += 0;
         }
-        document.getElementById("trip").innerHTML = "Total costs: " + (price * persons) + " &euro;";
+        document.getElementById("price").value = (price * persons);
     }
     if (warsaw == true) {
 
@@ -335,7 +335,7 @@ function Calculate() {
 
             price += 0;
         }
-        document.getElementById("trip").innerHTML = "Total costs: " + (price * persons) + " &euro;";
+        document.getElementById("price").value = (price * persons);
     }
     if (newyork == true) {
 
@@ -359,7 +359,7 @@ function Calculate() {
             price += 150;
 
         }
-        document.getElementById("trip").innerHTML = "Total costs: " + (price * persons) + " &euro;";
+        document.getElementById("price").value = (price * persons);
     }
 }
 
@@ -401,10 +401,10 @@ function CalculateV() {
 $(document).ready(function() {
     $("input[name='city']").change(function() {
 
-        if ($(this).val() == "Disable") {
+        if ($(this).val() == "NewYork") {
             $("#own").attr("disabled", true);
             $("#bus").attr("disabled", true);
-            $("#plain").attr("checked", true);
+            $("#plain").prop("checked", true);
             $(".dis").css("opacity", '.1');
         } else {
             $("#own").attr("disabled", false);
@@ -420,9 +420,14 @@ function resetAll() {
     $("#dest").html("");
     $("#pers").html("");
     $("#valid").html(" 1 - 10");
-    $("#trip").html("");
     $("#ch").html("");
     $("#trans").html("");
     $("input[name='city']").prop("checked", false);
+    $("input[name='choice']").prop("checked", true);
+    $("input[name='transport']").prop("checked", true);
+    $("#own").attr("disabled", false);
+    $("#bus").attr("disabled", false);
+    $(".dis").css("opacity", '1');
     $("#persons").val("");
+    $("#price").val("");
 }
